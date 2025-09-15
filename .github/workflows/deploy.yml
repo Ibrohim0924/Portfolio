@@ -15,11 +15,11 @@ jobs:
       - name: Setup SSH
         run: |
           mkdir -p $HOME/.ssh
-          echo "$SSH_PRIVATE_KEY_B64" | base64 --decode > $HOME/.ssh/id_rsa
+          echo "$SSH_PRIVATE_KEY" | base64 --decode > $HOME/.ssh/id_rsa
           chmod 600 $HOME/.ssh/id_rsa
           ssh-keyscan -H 3.123.45.67 >> $HOME/.ssh/known_hosts || true
         env:
-          SSH_PRIVATE_KEY_B64: ${{ secrets.SSH_PRIVATE_KEY_B64 }}
+          SSH_PRIVATE_KEY_B64: ${{ secrets.SSH_PRIVATE_KEY }}
 
       - name: Deploy to server
         run: |
