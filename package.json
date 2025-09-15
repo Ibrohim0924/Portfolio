@@ -1,12 +1,23 @@
 {
-  "name": "portfolie_website",
+  "name": "ibrohim-toshqoriyev-portfolio",
   "version": "1.0.0",
-  "description": "",
+  "description": "Personal portfolio website for Ibrohim Toshqoriyev, a Junior Backend Developer from Tashkent, Uzbekistan",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "keywords": [
+    "portfolio",
+    "backend-developer",
+    "nodejs",
+    "javascript",
+    "developer-portfolio"
+  ],
+  "author": "Ibrohim Toshqoriyev",
+  "license": "MIT",
+  "devDependencies": {
+    "vite": "^4.0.0"
+  }
 }

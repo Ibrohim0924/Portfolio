@@ -1,123 +1,277 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Ibrohim Toshqoriyev — Junior Backend Developer</title>
-  <meta name="description" content="Ibrohim Toshqoriyev — Junior Backend Developer | Node.js, Express, NestJS, PostgreSQL, MongoDB" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root{
-      --bg:#0f172a;
-      --card:#1e293b;
-      --accent:#38bdf8;
-      --muted:#94a3b8;
-      --light:#f1f5f9;
-      font-family: 'Inter', ui-sans-serif, system-ui;
-    }
-    *{box-sizing:border-box;margin:0;padding:0}
-    body{background:linear-gradient(135deg,var(--bg),#1e293b);color:var(--light);line-height:1.6;font-size:16px}
-    .container{max-width:1000px;margin:0 auto;padding:32px}
-
-    header{text-align:center;margin-bottom:50px;animation:fadeIn 1.2s ease}
-    header h1{font-size:42px;color:var(--accent);margin-bottom:10px;font-weight:700}
-    header p.role{font-size:20px;color:var(--light);margin-bottom:6px}
-    header p.contact{font-size:15px;color:var(--muted)}
-
-    .links{margin-top:22px;display:flex;justify-content:center;gap:20px;flex-wrap:wrap}
-    .links a{padding:10px 20px;border-radius:8px;background:var(--accent);color:var(--bg);text-decoration:none;font-weight:600;transition:.3s;box-shadow:0 4px 12px rgba(56,189,248,0.3)}
-    .links a:hover{background:#0ea5e9;color:#fff;transform:translateY(-2px)}
-
-    section{margin-bottom:40px;animation:fadeInUp 1s ease}
-    .card{background:var(--card);border-radius:14px;padding:28px;box-shadow:0 8px 30px rgba(0,0,0,0.25)}
-    .card h2{font-size:24px;color:var(--accent);margin-bottom:16px;font-weight:600;border-bottom:1px solid rgba(148,163,184,0.2);padding-bottom:6px}
-
-    ul.skills, ul.hobbies{display:flex;flex-wrap:wrap;gap:12px;list-style:none;padding:0}
-    ul.skills li, ul.hobbies li{background:rgba(207, 210, 212, 0.1);padding:10px 16px;border-radius:10px;color:var(--accent);font-weight:600;font-size:15px;transition:.3s}
-    ul.skills li:hover, ul.hobbies li:hover{background:rgba(56,189,248,0.2);transform:scale(1.05)}
-
-    footer{text-align:center;color:var(--muted);margin-top:50px;font-size:14px;padding-top:20px;border-top:1px solid rgba(148,163,184,0.2)}
-
-    @keyframes fadeIn {from{opacity:0} to{opacity:1}}
-    @keyframes fadeInUp {from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)}}
-
-    @media(max-width:768px){
-      header h1{font-size:32px}
-      header p.role{font-size:18px}
-      .links{flex-direction:column}
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ibrohim Toshqoriyev | Junior Backend Developer</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-  <div class="container">
-    <header>
-      <h1>Ibrohim Toshqoriyev</h1>
-      <p class="role">Junior Backend Developer</p>
-      <p class="contact">Tashkent, Uzbekistan · +998946080924 · ibrohimtoshqoriyev3@gmail.com</p>
-      <div class="links">
-        <a href="https://github.com/Ibrohim0924" target="_blank">GitHub</a>
-        <a href="https://www.linkedin.com/in/ibrohim-toshqoriyev-327633352/" target="_blank">LinkedIn</a>
-      </div>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <h2>Ibrohim<span>Toshqoriyev</span></h2>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
     </header>
 
-    <section>
-      <div class="card">
-        <h2>Objective</h2>
-        <p>To begin my career as a backend developer by joining an innovative team that values learning and growth, allowing me to apply my knowledge of Node.js, databases, and APIs while gaining practical experience.</p>
-      </div>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Ibrohim Toshqoriyev</h1>
+                <h2 class="hero-subtitle">Junior Backend Developer</h2>
+                <p class="hero-tagline">Passionate about building scalable backend systems and solving problems through clean code.</p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn primary-btn">Get In Touch</a>
+                    <a href="#about" class="btn secondary-btn">Learn More</a>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <section>
-      <div class="card">
-        <h2>Education</h2>
-        <p><strong>Tashkent Agrarian University</strong><br>Bachelor’s Degree in Information Technology — 2025 – 2030</p>
-        <p style="margin-top:12px"><strong>Najot Ta’lim</strong><br>Specialization: Backend Developer</p>
-      </div>
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <h2>About <span>Me</span></h2>
+            </div>
+            <div class="about-content">
+                <div class="about-info">
+                    <div class="info-item">
+                        <h3>Age</h3>
+                        <p>19</p>
+                    </div>
+                    <div class="info-item">
+                        <h3>Location</h3>
+                        <p>Uzbekistan, Tashkent</p>
+                    </div>
+                    <div class="info-item">
+                        <h3>Interests</h3>
+                        <p>Coding, playing musical instruments, playing football</p>
+                    </div>
+                </div>
+                <div class="about-text">
+                    <p>Hello! I am a motivated and detail-oriented Junior Backend Developer with a strong passion for backend technologies, databases, and system architecture. Though at the beginning of my career, I am constantly learning and building real-world projects to improve my skills.</p>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <section>
-      <div class="card">
-        <h2>Certifications / Courses</h2>
-        <p>Backend Development (Najot Ta’lim, 2025)</p>
-      </div>
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <div class="section-header">
+                <h2>My <span>Skills</span></h2>
+            </div>
+            <div class="skills-content">
+                <div class="skill-category">
+                    <h3>Languages & Frameworks</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <i class="fab fa-js"></i>
+                            <span>JavaScript</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-js"></i>
+                            <span>TypeScript</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-node-js"></i>
+                            <span>Node.js</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-node-js"></i>
+                            <span>Express.js</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-node-js"></i>
+                            <span>NestJS</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Databases</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <i class="fas fa-database"></i>
+                            <span>PostgreSQL</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-database"></i>
+                            <span>Redis</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-database"></i>
+                            <span>MongoDB</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>DevOps & Tools</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <i class="fab fa-docker"></i>
+                            <span>Docker</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-docker"></i>
+                            <span>Docker Compose</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-github"></i>
+                            <span>GitHub Actions</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-aws"></i>
+                            <span>AWS</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Others</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <i class="fab fa-telegram"></i>
+                            <span>Telegram Bot Development</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-code"></i>
+                            <span>RESTful API</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>Postman API</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <section>
-      <div class="card">
-        <h2>Skills</h2>
-        <ul class="skills">
-          <li>JavaScript (Node.js)</li>
-          <li>Express.js</li>
-          <li>NestJS</li>
-          <li>PostgreSQL</li>
-          <li>MongoDB</li>
-          <li>Redis</li>
-          <li>REST APIs</li>
-          <li>GraphQL</li>
-          <li>Git, GitHub</li>
-          <li>Teamwork & Collaboration</li>
-        </ul>
-      </div>
+    <!-- Education Section -->
+    <section id="education" class="education">
+        <div class="container">
+            <div class="section-header">
+                <h2>My <span>Education</span></h2>
+            </div>
+            <div class="education-content">
+                <div class="education-item">
+                    <div class="education-date">
+                        <span>Jan 2025 – July 2030</span>
+                    </div>
+                    <div class="education-info">
+                        <h3>Tashkent Agrarian University</h3>
+                        <p>Information Technology</p>
+                    </div>
+                </div>
+                <div class="education-item">
+                    <div class="education-date">
+                        <span>Jan 2025 – Sep 2025</span>
+                    </div>
+                    <div class="education-info">
+                        <h3>Najot Ta'lim</h3>
+                        <p>Backend Development (Node.js)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <section>
-      <div class="card">
-        <h2>Hobbies & Interests</h2>
-        <ul class="hobbies">
-          <li>Playing musical instruments 🎶</li>
-          <li>Playing football ⚽</li>
-          <li>Traveling & exploring new places 🌍</li>
-        </ul>
-      </div>  
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Get In <span>Touch</span></h2>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h3>Email</h3>
+                            <p><a href="mailto:ibrohimtoshqoriyev@gmail.com">ibrohimtoshqoriyev@gmail.com</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h3>Phone</h3>
+                            <p><a href="tel:+998946080924">+998 94 608 09 24</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-telegram"></i>
+                        <div>
+                            <h3>Telegram</h3>
+                            <p><a href="https://t.me/ibrohimjon_0924" target="_blank">@ibrohimjon_0924</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-github"></i>
+                        <div>
+                            <h3>GitHub</h3>
+                            <p><a href="https://github.com/Ibrohim0924" target="_blank">Ibrohim0924</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-linkedin"></i>
+                        <div>
+                            <h3>LinkedIn</h3>
+                            <p><a href="https://linkedin.com/in/ibrohim-toshqoriyev" target="_blank">Ibrohim Toshqoriyev</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
-    
-    <footer>
-      © <span id="year"></span> Ibrohim Toshqoriyev — Junior Backend Developer
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>Ibrohim<span>Toshqoriyev</span></h2>
+                </div>
+                <div class="footer-links">
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#skills">Skills</a>
+                    <a href="#education">Education</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <div class="social-icons">
+                    <a href="https://github.com/Ibrohim0924" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://linkedin.com/in/ibrohim-toshqoriyev" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://t.me/ibrohimjon_0924" target="_blank"><i class="fab fa-telegram"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Ibrohim Toshqoriyev. All Rights Reserved.</p>
+            </div>
+        </div>
     </footer>
-  </div>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+    <script src="script.js"></script>
 </body>
 </html>
