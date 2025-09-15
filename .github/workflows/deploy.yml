@@ -15,15 +15,15 @@ jobs:
       - name: Setup SSH
         run: |
           mkdir -p $HOME/.ssh
-          echo "$SSH_PRIVATE_KEY" | base64 --decode > $HOME/.ssh/id_rsa
+          echo "$SSH_PRIVATE_KEY" > $HOME/.ssh/id_rsa
           chmod 600 $HOME/.ssh/id_rsa
-          ssh-keyscan -H 3.123.45.67 >> $HOME/.ssh/known_hosts || true
+          ssh-keyscan -H 51.20.250.250 >> $HOME/.ssh/known_hosts
         env:
-          SSH_PRIVATE_KEY_B64: ${{ secrets.SSH_PRIVATE_KEY }}
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
 
       - name: Deploy to server
         run: |
-          ssh -i ~/.ssh/id_rsa root@3.123.45.67 "
+          ssh -i ~/.ssh/id_rsa ubuntu@51.20.250.250 "
             cd /var/www/portfolio && \
             git pull origin main && \
             systemctl reload nginx
