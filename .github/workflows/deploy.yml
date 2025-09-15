@@ -1,30 +1,34 @@
-name: Deploy to Server
+name: Portfolio CI/CD (ubuntu)
 
 on:
   push:
-    branches: [ "main" ]
+    branches:
+      - main
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Setup SSH
-        run: |
-          mkdir -p $HOME/.ssh
-          echo "$SSH_PRIVATE_KEY" > $HOME/.ssh/id_rsa
-          chmod 600 $HOME/.ssh/id_rsa
-          ssh-keyscan -H 51.20.250.250 >> $HOME/.ssh/known_hosts
-        env:
-          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-
-      - name: Deploy to server
-        run: |
-          ssh -i ~/.ssh/id_rsa ubuntu@51.20.250.250 "
-            cd /var/www/portfolio && \
-            git pull origin main && \
-            systemctl reload nginx
-          "
+      - name: Deploy via SSH
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: 22
+          timeout: 30s
+          command_timeout: 10m
+          script: |
+            set -e
+            export NVM_DIR="$HOME/.nvm"
+            [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+            cd /home/ubuntu/portfolio
+            git fetch --all
+            git reset --hard origin/main
+            npm install --production
+            npm run build
+            pm2 restart portfolio --name portfolio
